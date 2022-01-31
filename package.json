@@ -1,8 +1,8 @@
 {
-  "name": "heba-fittness",
+  "name": "hebah-fitness",
   "version": "1.0.0",
   "private": true,
-  "description": "Heba Fittness",
+  "description": "Hebah Fitness",
   "author": "Abdel Rahman",
   "keywords": [
     "gatsby"
@@ -15,6 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@tailwindui/react": "^0.1.1",
+    "axios": "^0.25.0",
     "gatsby": "^4.5.4",
     "gatsby-plugin-google-analytics": "^4.5.0",
     "gatsby-plugin-image": "^2.5.2",
@@ -24,8 +26,23 @@
     "gatsby-plugin-sitemap": "^5.5.0",
     "gatsby-source-filesystem": "^4.5.2",
     "gatsby-transformer-sharp": "^4.5.0",
+    "instagram-scraping": "^1.0.17",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.7.0",
+    "eslint-plugin-react": "^7.28.0",
+    "gatsby-plugin-postcss": "^5.5.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.15",
+    "tailwindcss-rtl": "^0.8.0",
+    "typescript": "^4.5.5"
   }
 }
