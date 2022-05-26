@@ -43,7 +43,7 @@ const IndexPage: React.FunctionComponent = () => {
                            <div className="col-span-8">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
-                                 href="https://api.whatsapp.com/send?phone=971505199526&text=Hey%20Heba!"
+                                 href="https://api.whatsapp.com/send?phone=971585199526&text=Hey%20Heba!"
                               >
                                  +971505199526
                               </a>
