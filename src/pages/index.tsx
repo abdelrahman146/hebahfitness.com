@@ -15,7 +15,7 @@ import { index_data } from "../content";
 import { Testimonial } from "../blocks/home/testimonials/TestimonialsBlock";
 import type { Certification } from "../blocks/home/certifications/CertificationsBlock";
 import { BlogCategory } from "../blocks/home/blog/BlogBlock";
-import { Layout } from "../components/Layout/layout";
+import { Layout } from "../components/Layout/Layout";
 import { Link } from "gatsby";
 
 export interface IndexData {

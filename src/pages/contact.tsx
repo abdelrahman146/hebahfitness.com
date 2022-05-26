@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BgColor, Box, Container, DisplayText, HeadingText, PageHeader, Section, TextSize } from "../components";
-import { Layout } from "../components/Layout/layout";
+import { Layout } from "../components/Layout/Layout";
 
 const IndexPage: React.FunctionComponent = () => {
    return (

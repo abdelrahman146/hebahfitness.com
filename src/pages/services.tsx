@@ -10,7 +10,7 @@ import {
    TextColor,
    TextSize,
 } from "../components";
-import { Layout } from "../components/Layout/layout";
+import { Layout } from "../components/Layout/Layout";
 import { services_data } from "../content";
 
 export interface ServicesData {
