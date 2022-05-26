@@ -41,7 +41,7 @@ export const IntroBlock: React.FunctionComponent<IntroBlockProps> = ({
                   <ul className="list-none text-center mt-4">{createOtherTitles(otherTitles)}</ul>
                </div>
                <div className="flex-1 lg:-translate-x-10">
-                  <Box images={images} action={ReadMoreButton("More About Me", "/about")}>
+                  <Box images={images}>
                      <div className="lg:hidden mb-8">
                         <HeadingText size={TextSize.XL_7}>
                            <strong>{jobTitle}</strong>

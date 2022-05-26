@@ -1,12 +1,5 @@
 import * as React from "react";
-import {
-   BlogBlock,
-   CertificationsBlock,
-   HeroBlock,
-   IntroBlock,
-   ServicesBlock,
-   TestimonialsBlock,
-} from "../blocks/home";
+import { CertificationsBlock, HeroBlock, IntroBlock, ServicesBlock, TestimonialsBlock } from "../blocks/home";
 import {
    Button,
    ButtonColor,
@@ -22,6 +15,8 @@ import { index_data } from "../content";
 import { Testimonial } from "../blocks/home/testimonials/TestimonialsBlock";
 import type { Certification } from "../blocks/home/certifications/CertificationsBlock";
 import { BlogCategory } from "../blocks/home/blog/BlogBlock";
+import { Layout } from "../components/Layout/layout";
+import { Link } from "gatsby";
 
 export interface IndexData {
    heroImage: string;
@@ -45,7 +40,7 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
    const data = index_data;
 
    return (
-      <div className="">
+      <Layout title="Home">
          <HeroBlock heroImage={data.heroImage} heroImageMobile={data.heroImageMobile} headline={data.headline} />
          <CertificationsBlock heading="Certifications" data={data.certifications} />
          <IntroBlock
@@ -60,7 +55,7 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
             testimonials={data.testimonials}
             title={"Client Success Stories"}
          />
-         <BlogBlock categories={data.blogCategories} />
+         {/* <BlogBlock categories={data.blogCategories} /> */}
          <GoToAction bgImage="images/action.jpg">
             <div className="p-4 text-center">
                <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
@@ -70,13 +65,15 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
                   LET&apos;S TALK ABOUT YOUR HEALTH.
                </HeadingText>
                <div className="mt-8">
-                  <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
-                     Let&apos;s Chat
-                  </Button>
+                  <Link to="/contact">
+                     <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
+                        Let&apos;s Chat
+                     </Button>
+                  </Link>
                </div>
             </div>
          </GoToAction>
-      </div>
+      </Layout>
    );
 };
 

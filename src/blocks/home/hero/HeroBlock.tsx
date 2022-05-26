@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import { Hero, HeadingText, TextSize, TextColor, Button, ButtonSize, ButtonColor } from "../../../components";
 
@@ -16,9 +17,11 @@ export const HeroBlock: React.FunctionComponent<HeroBlockProps> = ({ headline = 
                   {headline}
                </HeadingText>
                <div className="mt-8">
-                  <Button size={ButtonSize.XL} color={ButtonColor.ACCENT}>
-                     {"get started"}
-                  </Button>
+                  <Link to="/contact">
+                     <Button size={ButtonSize.XL} color={ButtonColor.ACCENT}>
+                        {"get started"}
+                     </Button>
+                  </Link>
                </div>
             </div>
             <div className="flex-1 hidden md:block"></div>

@@ -22,7 +22,7 @@ export const IntroBlock: React.FunctionComponent<IntroBlockProps> = ({ headline,
                   </HeadingText>
                </div>
             </div>
-            <div className="flex flex-row .flex-wrap justify-evenly items-start">
+            <div className="flex flex-col md:flex-row .flex-wrap justify-evenly items-start">
                <div className="w-full md:w-1/3 text-justify">
                   <BodyText size={TextSize.XL}>{p1}</BodyText>
                </div>

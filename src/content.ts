@@ -45,12 +45,12 @@ export const index_data: IndexData = {
    ],
    testimonials: [
       {
-         body: "Sylvie helped me see that I was heading for burnout at a breakneck pace. I needed to slow down and start taking better care of myself, because my business was paying the consequences. I couldn't focus, I had no clue what direction I was going, and I hated sitting down to work. With Sylvie's guidance.",
-         from: "Abdel Rahman",
-      },
-      {
          body: "food choices, get enough sleep, and move my body everyday. As a result, my business has never been better. I work hard and love every minute of it, instead of dreading work days.",
          from: "Hanin",
+      },
+      {
+         body: "Heba helped me see that I was heading for burnout at a breakneck pace. I needed to slow down and start taking better care of myself, because my business was paying the consequences. I couldn't focus, I had no clue what direction I was going, and I hated sitting down to work. With Heba's guidance.",
+         from: "Abdel Rahman",
       },
    ],
    blogCategories: [
@@ -107,5 +107,6 @@ export const about_data: AboutData = {
       headline: "Why Do I Coach Online?",
       subheadline: "BECAUSE IT'S FRIGGIN' IMPORTANT.",
       body: "If you you're looking for a coach to answer your questions within seconds. lay out a long term progress path for you, keep you accountable in exceeding on it, constant motivation and be there for you for any nessecary changes to be made to ensure you keep progressing towards your goals; having an online coach is worth the consideration",
+      image: "",
    },
 };

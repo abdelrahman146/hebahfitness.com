@@ -6,14 +6,19 @@ export interface ButtonProps {
    size: ButtonSize;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({ children, color, size }) => {
+export const Button: React.FunctionComponent<React.ComponentProps<"button"> & ButtonProps> = ({
+   children,
+   color,
+   size,
+   ...props
+}) => {
    let className =
       "font-heading uppercase transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300";
    if (color) className = className + " " + color;
    if (size) className = className + " " + size;
 
    return (
-      <button className={className} type="button">
+      <button className={className} {...props}>
          {children}
       </button>
    );

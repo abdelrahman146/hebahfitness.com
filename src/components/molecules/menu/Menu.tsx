@@ -8,7 +8,7 @@ export interface MenuProps {
 
 export const Menu: React.FunctionComponent<MenuProps> = ({ style = MenuStyle.ROW, items }: MenuProps) => {
    return (
-      <ul className={`flex ${style} items-center list-none`}>
+      <ul className={`flex ${style} items-center list-none gap-4`}>
          {items.map((item, index) => (
             <li
                key={index}

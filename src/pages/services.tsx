@@ -10,6 +10,7 @@ import {
    TextColor,
    TextSize,
 } from "../components";
+import { Layout } from "../components/Layout/layout";
 import { services_data } from "../content";
 
 export interface ServicesData {
@@ -41,35 +42,37 @@ const ServicesPage: React.FunctionComponent<ServicesPageProps> = () => {
    const data = services_data;
 
    return (
-      <div className="">
-         <PageHeader
-            headline={data.header.headline}
-            bgImage={data.header.headerImage}
-            subheadline={data.header.subheadline}
-         />
-         <IntroBlock
-            headline={data.introBlock.headline}
-            subheadline={data.introBlock.subheadline}
-            p1={data.introBlock.p1}
-            p2={data.introBlock.p2}
-         />
-         <ServicesList services={data.services} />
-         <GoToAction bgImage="images/action.jpg">
-            <div className="p-4 text-center">
-               <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
-                  TIRED OF NOT FEELING YOUR BEST?
-               </HeadingText>
-               <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_5}>
-                  LET&apos;S TALK ABOUT YOUR HEALTH.
-               </HeadingText>
-               <div className="mt-8">
-                  <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
-                     Let&apos;s Chat
-                  </Button>
+      <Layout title="Change Your Life">
+         <div className="">
+            <PageHeader
+               headline={data.header.headline}
+               bgImage={data.header.headerImage}
+               subheadline={data.header.subheadline}
+            />
+            <IntroBlock
+               headline={data.introBlock.headline}
+               subheadline={data.introBlock.subheadline}
+               p1={data.introBlock.p1}
+               p2={data.introBlock.p2}
+            />
+            <ServicesList services={data.services} />
+            <GoToAction bgImage="images/action.jpg">
+               <div className="p-4 text-center">
+                  <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
+                     TIRED OF NOT FEELING YOUR BEST?
+                  </HeadingText>
+                  <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_5}>
+                     LET&apos;S TALK ABOUT YOUR HEALTH.
+                  </HeadingText>
+                  <div className="mt-8">
+                     <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
+                        Let&apos;s Chat
+                     </Button>
+                  </div>
                </div>
-            </div>
-         </GoToAction>
-      </div>
+            </GoToAction>
+         </div>
+      </Layout>
    );
 };
 export default ServicesPage;
