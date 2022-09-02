@@ -35,7 +35,7 @@ collections:
         - { label: "Summary", name: "summary", widget: "string", required: true }
         - { label: "Tags", name: "tags", widget: "list", required: false }
         - { label: "Image", name: "image", widget: "image", required: true }
-        - { label: "Publish Date", name: "created_at", widget: "data", required: true }
+        - { label: "Publish Date", name: "created_at", widget: "date", required: true }
         - {
              label: "Categories",
              name: "categories",
