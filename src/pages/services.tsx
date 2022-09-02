@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import { IntroBlock, ServicesList } from "../blocks/services";
 import {
@@ -65,9 +66,11 @@ const ServicesPage: React.FunctionComponent<ServicesPageProps> = () => {
                      LET&apos;S TALK ABOUT YOUR HEALTH.
                   </HeadingText>
                   <div className="mt-8">
-                     <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
-                        Let&apos;s Chat
-                     </Button>
+                     <Link to="/contact">
+                        <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
+                           Let&apos;s Chat
+                        </Button>
+                     </Link>
                   </div>
                </div>
             </GoToAction>

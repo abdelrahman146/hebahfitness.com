@@ -1,7 +1,8 @@
 module.exports = {
    env: {
       browser: true,
-      es2021: true,
+      amd: true,
+      node: true,
    },
    extends: ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
    parser: "@typescript-eslint/parser",
@@ -15,5 +16,13 @@ module.exports = {
    plugins: ["react", "@typescript-eslint"],
    rules: {
       "newline-before-return": "warn",
+      "react/prop-types": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-unused-vars": [
+         "warn",
+         {
+            argsIgnorePattern: "^_",
+         },
+      ],
    },
 };

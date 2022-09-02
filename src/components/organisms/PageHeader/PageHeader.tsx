@@ -3,8 +3,8 @@ import { Container, HeadingText, TextColor, TextSize } from "../..";
 
 export interface PageHeaderProps {
    bgImage: string;
-   headline: string;
-   subheadline: string;
+   headline?: string;
+   subheadline?: string;
 }
 
 export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({ bgImage, headline, subheadline }) => {
@@ -15,10 +15,14 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({ bgImage, 
       <div style={{ backgroundImage: `url(${bgImage})` }} className={className}>
          <Container>
             <div className="mx-auto text-center translate-y-10 bg-[#00000080] p-10 w-fit">
-               <HeadingText size={TextSize.XL_7} color={TextColor.LIGHT_1}>
-                  <strong>{headline}</strong>
-               </HeadingText>
-               <div className="mt-8">
+               {headline && (
+                  <div className="mb-8">
+                     <HeadingText size={TextSize.XL_7} color={TextColor.LIGHT_1}>
+                        <strong>{headline}</strong>
+                     </HeadingText>
+                  </div>
+               )}
+               <div className="">
                   <HeadingText size={TextSize.XL_2} color={TextColor.LIGHT_1}>
                      {subheadline}
                   </HeadingText>

@@ -65,10 +65,13 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
                   LET&apos;S TALK ABOUT YOUR HEALTH.
                </HeadingText>
                <div className="mt-8">
+                  {/* @ts-ignore */}
                   <Link to="/contact">
-                     <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
-                        Let&apos;s Chat
-                     </Button>
+                     <Link to="/contact">
+                        <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
+                           Let&apos;s Chat
+                        </Button>
+                     </Link>
                   </Link>
                </div>
             </div>

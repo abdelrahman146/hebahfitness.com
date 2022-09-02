@@ -20,6 +20,11 @@ const menu: MenuItem[] = [
       name: "services",
    },
    {
+      path: "/blog",
+      text: "Blog",
+      name: "services",
+   },
+   {
       path: "/contact",
       text: "Contact",
       name: "contact",

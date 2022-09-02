@@ -20,8 +20,6 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ menu }) => {
          </Link>
       ));
 
-   console.log({ menu });
-
    return (
       <div>
          <Section paddingY={PaddingYSize.XL}>
