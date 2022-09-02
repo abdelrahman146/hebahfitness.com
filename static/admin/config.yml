@@ -1,0 +1,50 @@
+backend:
+   name: git-gateway
+   branch: master
+media_folder: static/images
+public_folder: /images
+collections:
+   - label: "Category"
+     name: "category"
+     folder: "content/categories"
+     create: true
+     slug: "{{slug}}"
+     media_folder: /static/images/categories
+     public_folder: /images/categories
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "category" }
+        - { label: "Slug", name: "slug", widget: "string", required: true }
+        - { label: "Name", name: "name", widget: "string", required: true }
+        - { label: "Description", name: "description", widget: "string", required: true }
+        - { label: "Image", name: "image", widget: "image", required: true }
+   - label: "Post"
+     name: "post"
+     folder: "content/posts"
+     create: true
+     slug: "{{slug}}"
+     media_folder: /static/images/posts
+     public_folder: /images/posts
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "post" }
+        - { label: "Title", name: "title", widget: "string", required: true }
+        - { label: "Slug", name: "slug", widget: "string", required: true }
+        - { label: "Summary", name: "summary", widget: "string", required: true }
+        - { label: "Tags", name: "tags", widget: "list", required: false }
+        - { label: "Image", name: "image", widget: "image", required: true }
+        - { label: "Publish Date", name: "created_at", widget: "data", required: true }
+        - {
+             label: "Categories",
+             name: "categories",
+             widget: "relation",
+             collection: "category",
+             searchFields: ["name"],
+             valueField: "slug",
+             required: true,
+             multiple: true,
+             min: 1,
+          }
+        - { label: "Body", name: "body", widget: "markdown", required: true }
