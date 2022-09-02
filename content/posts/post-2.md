@@ -1,13 +1,22 @@
 ---
 type: post
-title: Et no rebum aliquyam.
-slug: post-2
-categories: [recipes]
-tags: [Nutrition, Fitness]
-summary: >-
-    Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea kasd rebum aliquyam stet eos.
-created_at: 2020-08-01T05:37:06.481Z
+title: How to Choose the Best Protein Powder ?
+slug: How-to-Choose-the-Best-Protein-Powder
+summary: Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
+  dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea
+  kasd rebum aliquyam stet eos.
+tags:
+  - Nutrition
+  - Fitness
+  - protein
+  - supplement
+  - '"muscle gain"'
+  - '"gain muscle"'
+  - '"protein powder"'
 image: /images/blog/workout.jpg
+created_at: 2020-08-01T05:37:06.481Z
+categories:
+  - nutrition
 ---
 
 # Stet ea sit.
