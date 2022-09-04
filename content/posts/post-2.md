@@ -5,7 +5,8 @@ created_at: 2020-08-01T05:37:06.481Z
 image: /assets/blog/workout.jpg
 title: How to Choose the Best Protein Powder ?
 slug: How-to-Choose-the-Best-Protein-Powder
-summary: Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
+summary: >-
+  Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
   dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea
   kasd rebum aliquyam stet eos.
 tags:
