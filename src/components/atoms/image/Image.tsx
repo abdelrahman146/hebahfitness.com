@@ -7,6 +7,7 @@ export interface ImageProps {
    alt?: string;
    size?: ImageSize;
    style?: ImageStyle;
+   l;
    dynamic?: boolean;
 }
 
