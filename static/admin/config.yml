@@ -64,11 +64,11 @@ collections:
         - { label: "Image", name: "image", widget: "image", required: true }
    - label: "Certifications"
      name: "certification"
-     folder: "content/certification"
+     folder: "content/certifications"
      create: true
      slug: "{{fields.title}}"
-     media_folder: /static/assets/certification
-     public_folder: /assets/certification
+     media_folder: /static/assets/certifications
+     public_folder: /assets/certifications
      editor:
         preview: false
      fields:
@@ -79,11 +79,11 @@ collections:
         - { label: "Title", name: "title", widget: "image", required: true }
    - label: "Pages"
      name: "page"
-     folder: "content/page"
+     folder: "content/pages"
      create: true
      slug: "{{fields.nav_title}}"
-     media_folder: /static/assets/page
-     public_folder: /assets/page
+     media_folder: /static/assets/pages
+     public_folder: /assets/pages
      editor:
         preview: false
      fields:
@@ -104,11 +104,11 @@ collections:
         - { label: "Header Image", name: "image", widget: "image", required: true }
    - label: "Services"
      name: "service"
-     folder: "content/service"
+     folder: "content/services"
      create: true
      slug: "{{fields.title}}"
-     media_folder: /static/assets/service
-     public_folder: /assets/service
+     media_folder: /static/assets/services
+     public_folder: /assets/services
      editor:
         preview: false
      fields:
@@ -126,11 +126,11 @@ collections:
         - { label: "Summary", name: "summary", widget: "text", required: true }
    - label: "Testimonials"
      name: "testimonial"
-     folder: "content/testimonial"
+     folder: "content/testimonials"
      create: true
      slug: "{{fields.from}}"
-     media_folder: /static/assets/testimonial
-     public_folder: /assets/testimonial
+     media_folder: /static/assets/testimonials
+     public_folder: /assets/testimonials
      editor:
         preview: false
      fields:
