@@ -81,7 +81,7 @@
 }
 
 .action-image {
-   background: url("images/action.jpg") no-repeat;
+   background: url("/assets/action.jpg") no-repeat;
    background-size: cover;
 }
 

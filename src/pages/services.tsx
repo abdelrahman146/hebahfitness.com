@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import * as React from "react";
 import { IntroBlock, ServicesList } from "../blocks/services";
 import {
@@ -12,7 +12,13 @@ import {
    TextSize,
 } from "../components";
 import { Layout } from "../components/Layout/Layout";
-import { services_data } from "../content";
+
+const introBlock = {
+   headline: "Feeling hopeless because you've tried everything?",
+   subheadline: "let's make sure it never happens to you!",
+   p1: "Commodo enim fugiat enim voluptate ex consequat sint nulla nulla nulla. Exercitation cupidatat ipsum mollit pariatur duis. Ullamco ex aute in fugiat ad consequat cupidatat veniam aliquip. Amet excepteur fugiat mollit nulla incididunt tempor veniam. Proident dolore incididunt ad est quis fugiat commodo sit sit nostrud. Id reprehenderit officia officia aute duis eu culpa culpa magna ex incididunt ex irure.",
+   p2: "Proident sint voluptate voluptate commodo excepteur laborum. Esse consectetur nulla reprehenderit officia cillum enim dolore voluptate excepteur. Lorem dolor irure incididunt est in enim in nulla laboris aliquip excepteur cillum nisi reprehenderit.",
+};
 
 export interface ServicesData {
    header: {
@@ -39,25 +45,29 @@ export interface ServicesPageProps {
    data: ServicesData;
 }
 
-const ServicesPage: React.FunctionComponent<ServicesPageProps> = () => {
-   const data = services_data;
+const ServicesPage = ({ data }) => {
+   const { page, services } = data;
 
    return (
-      <Layout title="Change Your Life">
+      <Layout
+         title={page.frontmatter.meta_title}
+         description={page.frontmatter.meta_description}
+         keywords={page.frontmatter.meta_keywords}
+      >
          <div className="">
             <PageHeader
-               headline={data.header.headline}
-               bgImage={data.header.headerImage}
-               subheadline={data.header.subheadline}
+               headline={page.frontmatter.page_title}
+               bgImage={page.frontmatter.image}
+               subheadline={page.frontmatter.page_subtitle}
             />
             <IntroBlock
-               headline={data.introBlock.headline}
-               subheadline={data.introBlock.subheadline}
-               p1={data.introBlock.p1}
-               p2={data.introBlock.p2}
+               headline={introBlock.headline}
+               subheadline={introBlock.subheadline}
+               p1={introBlock.p1}
+               p2={introBlock.p2}
             />
-            <ServicesList services={data.services} />
-            <GoToAction bgImage="images/action.jpg">
+            <ServicesList services={services} />
+            <GoToAction bgImage="/assets/action.jpg">
                <div className="p-4 text-center">
                   <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
                      TIRED OF NOT FEELING YOUR BEST?
@@ -79,3 +89,38 @@ const ServicesPage: React.FunctionComponent<ServicesPageProps> = () => {
    );
 };
 export default ServicesPage;
+
+export const query = graphql`
+   query ServicesQuery {
+      page: markdownRemark(frontmatter: { type: { eq: "page" }, slug: { eq: "services" } }) {
+         frontmatter {
+            meta_title
+            page_title
+            page_subtitle
+            meta_keywords
+            meta_description
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 1920)
+               }
+            }
+         }
+      }
+      services: allMarkdownRemark(filter: { frontmatter: { type: { eq: "service" } } }) {
+         edges {
+            node {
+               frontmatter {
+                  image {
+                     childImageSharp {
+                        gatsbyImageData(width: 500)
+                     }
+                  }
+                  title
+                  subtitle
+                  summary
+               }
+            }
+         }
+      }
+   }
+`;

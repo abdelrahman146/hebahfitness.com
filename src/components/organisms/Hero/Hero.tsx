@@ -1,19 +1,30 @@
+// @ts-nocheck
 import * as React from "react";
 import { Container } from "../..";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
 
 export interface HeroProps {
-   bgImage?: string;
+   bgImage?: any;
    bgImageMobile?: string;
 }
 
 export const Hero: React.FunctionComponent<HeroProps> = ({ bgImage, bgImageMobile, children }) => {
-   const className =
-      "bg-primary-900 bg-cover bg-no-repeat h-screen md:h-[33rem] lg:h-[40rem] xl:h-screen flex flex-col justify-center items-center";
-   const createHero = (bgImage) => {
+   const image = getImage(bgImage);
+   const backgroundImage = convertToBgImage(image);
+   const className = "h-screen md:h-[33rem] lg:h-[40rem] xl:h-screen flex flex-col justify-center items-center";
+   const createHero = () => {
       return (
-         <div style={{ backgroundImage: `url(${bgImage})` }} className={className}>
-            <Container>{children}</Container>
-         </div>
+         <>
+            {/* {JSON.stringify(backgroundImage)} */}
+            <BackgroundImage Tag={"div"} {...backgroundImage} preserveStackingContext>
+               <div className={className}>
+                  <Container>{children}</Container>
+               </div>
+            </BackgroundImage>
+         </>
       );
    };
 

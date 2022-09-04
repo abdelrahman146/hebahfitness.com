@@ -13,29 +13,40 @@ import {
 } from "../../../components";
 
 export interface Service {
-   title: string;
-   image: string;
-   summary: string;
+   frontmatter: {
+      title: string;
+      image: string;
+      summary: string;
+   };
 }
 
 export interface ServicesBlockProps {
-   services: Service[];
+   services: {
+      edges: {
+         node: Service;
+      }[];
+   };
    headline: string;
 }
 
 export const ServicesBlock: React.FunctionComponent<ServicesBlockProps> = ({ headline, services }) => {
-   const createServices = (services: Service[]) => {
-      return services.map((service, index) => (
+   const createServices = (services: {
+      edges: {
+         node: Service;
+      }[];
+   }) => {
+      return services.edges.map(({ node }, index) => (
          <div key={index} className="max-w-sm mx-auto p-5 md:p-0 mb-10 md:mb-0 last:mb-0">
             <Card
-               heading={service.title}
+               heading={node.frontmatter.title}
                image={{
-                  alt: service.title,
-                  src: service.image,
+                  alt: node.frontmatter.title,
+                  src: node.frontmatter.image,
+                  dynamic: true,
                   style: index % 2 == 0 ? ImageStyle.SHADOWED_START : ImageStyle.SHADOWED_END,
                }}
             >
-               {service.summary}
+               {node.frontmatter.summary}
             </Card>
          </div>
       ));

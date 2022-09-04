@@ -7,6 +7,7 @@ export interface CardProps {
       style: ImageStyle;
       src: string;
       alt: string;
+      dynamic?: boolean;
    };
    heading?: string;
 }
@@ -21,6 +22,7 @@ export const Card: React.FunctionComponent<CardProps> = ({ image, heading, child
                   size={ImageSize.XLARGE}
                   src={image.src || ""}
                   alt={image.alt || ""}
+                  dynamic={image.dynamic}
                />
             </div>
          )}

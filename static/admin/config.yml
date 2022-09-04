@@ -1,38 +1,31 @@
 backend:
    name: git-gateway
    branch: master
-media_folder: static/images
-public_folder: /images
+publish_mode: editorial_workflow
+local_backend: true
+media_folder: static/assets
+public_folder: /assets
 collections:
-   - label: "Category"
-     name: "category"
-     folder: "content/categories"
-     create: true
-     slug: "{{slug}}"
-     media_folder: /static/images/categories
-     public_folder: /images/categories
-     editor:
-        preview: false
-     fields:
-        - { label: "Type", name: "type", widget: "hidden", default: "category" }
-        - { label: "Slug", name: "slug", widget: "string", required: true }
-        - { label: "Name", name: "name", widget: "string", required: true }
-        - { label: "Description", name: "description", widget: "string", required: true }
-        - { label: "Image", name: "image", widget: "image", required: true }
-   - label: "Post"
+   - label: "Posts"
      name: "post"
      folder: "content/posts"
      create: true
-     slug: "{{slug}}"
-     media_folder: /static/images/posts
-     public_folder: /images/posts
+     slug: "{{fields.slug}}"
+     media_folder: /static/assets/posts
+     public_folder: /assets/posts
      editor:
         preview: false
      fields:
         - { label: "Type", name: "type", widget: "hidden", default: "post" }
         - { label: "Title", name: "title", widget: "string", required: true }
-        - { label: "Slug", name: "slug", widget: "string", required: true }
-        - { label: "Summary", name: "summary", widget: "string", required: true }
+        - {
+             label: "Slug",
+             name: "slug",
+             widget: "string",
+             required: true,
+             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+          }
+        - { label: "Summary", name: "summary", widget: "text", required: true }
         - { label: "Tags", name: "tags", widget: "list", required: false }
         - { label: "Image", name: "image", widget: "image", required: true }
         - { label: "Publish Date", name: "created_at", widget: "date", required: true }
@@ -48,3 +41,139 @@ collections:
              min: 1,
           }
         - { label: "Body", name: "body", widget: "markdown", required: true }
+   - label: "Categories"
+     name: "category"
+     folder: "content/categories"
+     create: true
+     slug: "{{fields.slug}}"
+     media_folder: /static/assets/categories
+     public_folder: /assets/categories
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "category" }
+        - {
+             label: "Slug",
+             name: "slug",
+             widget: "string",
+             required: true,
+             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+          }
+        - { label: "Name", name: "name", widget: "string", required: true }
+        - { label: "Description", name: "description", widget: "text", required: true }
+        - { label: "Image", name: "image", widget: "image", required: true }
+   - label: "General"
+     name: "general"
+     folder: "content/general"
+     create: false
+     media_folder: /static/assets/general
+     public_folder: /assets/general
+     editor:
+        preview: false
+     files:
+        - label: "About"
+        - name: "about"
+        - editor:
+             preview: false
+        - fields:
+             - { label: "Type", name: "type", widget: "hidden", default: "general" }
+             - { label: "Slug", name: "slug", widget: "hidden", default: "about" }
+             - { label: "Name", name: "name", widget: "string", required: true }
+             - { label: "Title", name: "title", widget: "string", required: true }
+             - { label: "Skills", name: "skills", widget: "list", required: true }
+             - { label: "Summary", name: "summary", widget: "text", required: true }
+             - { label: "Profile", name: "profile", widget: "image", required: true }
+             - { label: "Email", name: "email", widget: "string", required: true }
+             - { label: "Mobile", name: "mobile", widget: "string", required: true }
+             - { label: "Body", name: "body", widget: "markdown", required: true }
+   - label: "Certifications"
+     name: "certification"
+     folder: "content/certification"
+     create: true
+     slug: "{{fields.title}}"
+     media_folder: /static/assets/certification
+     public_folder: /assets/certification
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "certification" }
+        - { label: "Certified Date", name: "date", widget: "date", required: true }
+        - { label: "Badge", name: "badge", widget: "image", required: true }
+        - { label: "Source", name: "source", widget: "string", required: true }
+        - { label: "Title", name: "title", widget: "image", required: true }
+   - label: "Certifications"
+     name: "certification"
+     folder: "content/certification"
+     create: true
+     slug: "{{fields.title}}"
+     media_folder: /static/assets/certification
+     public_folder: /assets/certification
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "certification" }
+        - { label: "Certified Date", name: "date", widget: "date", required: true }
+        - { label: "Badge", name: "badge", widget: "image", required: true }
+        - { label: "Source", name: "source", widget: "string", required: true }
+        - { label: "Title", name: "title", widget: "image", required: true }
+   - label: "Pages"
+     name: "page"
+     folder: "content/page"
+     create: true
+     slug: "{{fields.nav_title}}"
+     media_folder: /static/assets/page
+     public_folder: /assets/page
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "page" }
+        - {
+             label: "Slug",
+             name: "slug",
+             widget: "string",
+             required: true,
+             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+          }
+        - { label: "Meta Keywords", name: "meta_keywords", widget: "list", required: true }
+        - { label: "Meta Description", name: "meta_description", widget: "text", required: true }
+        - { label: "Meta Title", name: "meta_title", widget: "string", required: true }
+        - { label: "Navigation Title", name: "nav_title", widget: "string", required: true }
+        - { label: "Header Title", name: "page_title", widget: "string", required: false }
+        - { label: "Header Subtitle", name: "page_subtitle", widget: "string", required: false }
+        - { label: "Header Image", name: "image", widget: "image", required: true }
+   - label: "Services"
+     name: "service"
+     folder: "content/service"
+     create: true
+     slug: "{{fields.title}}"
+     media_folder: /static/assets/service
+     public_folder: /assets/service
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "service" }
+        - {
+             label: "Slug",
+             name: "slug",
+             widget: "string",
+             required: true,
+             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+          }
+        - { label: "Image", name: "image", widget: "image", required: true }
+        - { label: "Title", name: "title", widget: "string", required: true }
+        - { label: "Subtitle", name: "subtitle", widget: "string", required: true }
+        - { label: "Summary", name: "summary", widget: "text", required: true }
+   - label: "Testimonials"
+     name: "testimonial"
+     folder: "content/testimonial"
+     create: true
+     slug: "{{fields.from}}"
+     media_folder: /static/assets/testimonial
+     public_folder: /assets/testimonial
+     editor:
+        preview: false
+     fields:
+        - { label: "Type", name: "type", widget: "hidden", default: "testimonial" }
+        - { label: "Date", name: "date", widget: "date", required: true }
+        - { label: "From", name: "from", widget: "string", required: true }
+        - { label: "Body", name: "body", widget: "text", required: true }

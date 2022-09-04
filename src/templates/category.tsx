@@ -20,15 +20,19 @@ import {
 } from "../components";
 
 export default function BlogCategory({ data, pageContext }) {
-   const { categories, posts } = data;
+   const { categories, posts, page, about } = data;
    const { numPages, currentPage } = pageContext;
 
    return (
-      <Layout title={"The Self-car blog"}>
+      <Layout
+         title={page.frontmatter.meta_title}
+         description={page.frontmatter.meta_description}
+         keywords={page.frontmatter.meta_keywords}
+      >
          <PageHeader
-            headline={"The Self-car blog"}
-            bgImage={"/images/header-1.jpg"}
-            subheadline={"HEALTH, WELLNESS, & SELF-CARE FOR ENTREPRENEURS"}
+            headline={page.frontmatter.page_title}
+            bgImage={page.frontmatter.image}
+            subheadline={page.frontmatter.page_subtitle}
          />
          <Section bgcolor={BgColor.LIGHT_1}>
             <Container>
@@ -39,30 +43,30 @@ export default function BlogCategory({ data, pageContext }) {
                         <div className="flex flex-col gap-8">
                            {posts.edges.map(({ node }) => {
                               return (
-                                 <div key={node.slug} className="flex flex-col lg:flex-row gap-5 items-center">
-                                    <Img
-                                       size={ImageSize.MEDIUM}
-                                       style={ImageStyle.BORDERED}
-                                       src={node.frontmatter.image}
-                                    />
-                                    <div className="flex flex-col gap-3">
-                                       {/* @ts-ignore */}
-                                       <Link
-                                          className="font-header uppercase tracking-wider font-bold text-2xl"
-                                          to={"/blog/post/" + node.frontmatter.slug}
-                                       >
-                                          {node.frontmatter.title}
-                                       </Link>
-                                       <BodyText size={TextSize.XL}>{node.frontmatter.summary}</BodyText>
-                                       <div className="">
+                                 <div key={node.slug} className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center">
+                                    <div className="col-span-1">
+                                       <Img style={ImageStyle.BORDERED} src={node.frontmatter.image} dynamic />
+                                    </div>
+                                    <div className="col-span-1 md:col-span-3">
+                                       <div className="flex flex-col gap-3">
+                                          {/* @ts-ignore */}
                                           <Link
                                              className="font-header uppercase tracking-wider font-bold text-2xl"
                                              to={"/blog/post/" + node.frontmatter.slug}
                                           >
-                                             <Button color={ButtonColor.ACCENT} size={ButtonSize.LARGE}>
-                                                Read More
-                                             </Button>
+                                             {node.frontmatter.title}
                                           </Link>
+                                          <BodyText size={TextSize.XL}>{node.frontmatter.summary}</BodyText>
+                                          <div className="">
+                                             <Link
+                                                className="font-header uppercase tracking-wider font-bold text-2xl"
+                                                to={"/blog/post/" + node.frontmatter.slug}
+                                             >
+                                                <Button color={ButtonColor.ACCENT} size={ButtonSize.LARGE}>
+                                                   Read More
+                                                </Button>
+                                             </Link>
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
@@ -95,16 +99,12 @@ export default function BlogCategory({ data, pageContext }) {
                   </div>
                   <div className="flex flex-col gap-8">
                      <div className="flex flex-col gap-5 ">
-                        <Img style={ImageStyle.BORDERED} src={"/images/heba-profile.jpg"} />
+                        <Img style={ImageStyle.BORDERED} src={about.frontmatter.profile} dynamic />
                         <div className="text-center">
                            <HeadingText size={TextSize.XL_2}>Hey, I&apos;m Heba</HeadingText>
                         </div>
                         <div className="px-4">
-                           <BodyText size={TextSize.XL}>
-                              I am a Nutrition Coach certified in Biochemistry, Nutrition, and Body Building. I am
-                              passionate about helping people in reaching their health & physique goals through well
-                              programmed training & nutritional plans specifically tailored to their goals.
-                           </BodyText>
+                           <BodyText size={TextSize.XL}>{about.frontmatter.summary}</BodyText>
                         </div>
                         <div className="text-center">
                            <Button color={ButtonColor.ACCENT} size={ButtonSize.LARGE}>
@@ -133,7 +133,7 @@ export default function BlogCategory({ data, pageContext }) {
                </div>
             </Container>
          </Section>
-         <GoToAction bgImage="/images/action.jpg">
+         <GoToAction bgImage="/assets/action.jpg">
             <div className="p-4 text-center">
                <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
                   TIRED OF NOT FEELING YOUR BEST?
@@ -156,6 +156,31 @@ export default function BlogCategory({ data, pageContext }) {
 
 export const query = graphql`
    query BlogCategory($skip: Int!, $limit: Int!, $category: String!) {
+      page: markdownRemark(frontmatter: { type: { eq: "page" }, slug: { eq: "blog" } }) {
+         frontmatter {
+            meta_title
+            page_title
+            page_subtitle
+            meta_keywords
+            meta_description
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 1920)
+               }
+            }
+         }
+      }
+      about: markdownRemark(frontmatter: { type: { eq: "general" }, slug: { eq: "about" } }) {
+         frontmatter {
+            name
+            summary
+            profile {
+               childImageSharp {
+                  gatsbyImageData(width: 500)
+               }
+            }
+         }
+      }
       categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: "category" } } }) {
          edges {
             node {
@@ -177,7 +202,11 @@ export const query = graphql`
                frontmatter {
                   title
                   slug
-                  image
+                  image {
+                     childImageSharp {
+                        gatsbyImageData(width: 500)
+                     }
+                  }
                   summary
                   categories
                }

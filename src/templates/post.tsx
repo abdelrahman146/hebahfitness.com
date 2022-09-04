@@ -21,12 +21,20 @@ import {
 } from "../components";
 
 export default function BlogPost({ data }) {
-   const { post, categories, related } = data;
+   const { post, categories, related, page, about } = data;
    const info = post.frontmatter;
 
    return (
-      <Layout title={info.title}>
-         <PageHeader headline={""} bgImage={"/images/header-1.jpg"} subheadline={"Fitness Health and Care for you"} />
+      <Layout
+         title={post.frontmatter.title}
+         description={post.frontmatter.summary || page.frontmatter.description}
+         keywords={post.frontmatter.tags || page.frontmatter.keywords}
+      >
+         <PageHeader
+            headline={page.frontmatter.page_title}
+            bgImage={page.frontmatter.image}
+            subheadline={page.frontmatter.page_subtitle}
+         />
          <Section bgcolor={BgColor.LIGHT_1}>
             <Container>
                <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
@@ -38,21 +46,17 @@ export default function BlogPost({ data }) {
                         {info.summary}
                      </BodyText>
                      <HeadingText size={TextSize.XL_2}>{info.categories.join(", ")}</HeadingText>
-                     <Img style={ImageStyle.PLAIN} src={info.image} />
+                     <Img style={ImageStyle.PLAIN} src={info.image} dynamic />
                      <RenderedHTML dangerouslySetInnerHTML={{ __html: post.html }} />
                   </div>
                   <div className="flex flex-col gap-8">
                      <div className="flex flex-col gap-5 ">
-                        <Img style={ImageStyle.BORDERED} src={"/images/heba-profile.jpg"} />
+                        <Img style={ImageStyle.BORDERED} src={about.frontmatter.profile} dynamic />
                         <div className="text-center">
                            <HeadingText size={TextSize.XL_2}>Hey, I&apos;m Heba</HeadingText>
                         </div>
                         <div className="px-4">
-                           <BodyText size={TextSize.XL}>
-                              I am a Nutrition Coach certified in Biochemistry, Nutrition, and Body Building. I am
-                              passionate about helping people in reaching their health & physique goals through well
-                              programmed training & nutritional plans specifically tailored to their goals.
-                           </BodyText>
+                           <BodyText size={TextSize.XL}>{about.frontmatter.summary}</BodyText>
                         </div>
                         <div className="text-center">
                            <Button color={ButtonColor.ACCENT} size={ButtonSize.LARGE}>
@@ -65,11 +69,11 @@ export default function BlogPost({ data }) {
                            SEARCH BY CATEGORY
                         </HeadingText>
                         <div className="flex flex-col gap-5 justify-center mt-5">
-                           {categories.edges.map((category) => (
+                           {categories.edges.map((category, i) => (
                               //@ts-ignore
                               <Link
                                  className="font-body text-2xl"
-                                 key={category.node.frontmatter.slug}
+                                 key={category.node.frontmatter.slug + i}
                                  to={"/blog/category/" + category.node.frontmatter.slug}
                               >
                                  {category.node.frontmatter.name}
@@ -87,13 +91,14 @@ export default function BlogPost({ data }) {
                   <div className="flex flex-col gap-8">
                      <HeadingText size={TextSize.XL_4}>Related Posts</HeadingText>
                      <div className="flex flex-col lg:flex-row gap-5 items-center">
-                        {related.edges.map(({ node }) => {
+                        {related.edges.map(({ node }, i) => {
                            return (
-                              <div key={node.slug} className="flex flex-col gap-5 text-center">
+                              <div key={node.slug + i} className="flex flex-col gap-5 text-center">
                                  <Img
                                     size={ImageSize.MEDIUM}
                                     style={ImageStyle.BORDERED}
                                     src={node.frontmatter.image}
+                                    dynamic
                                  />
                                  {/* @ts-ignore */}
                                  <Link
@@ -111,7 +116,7 @@ export default function BlogPost({ data }) {
                </Container>
             </Section>
          )}
-         <GoToAction bgImage="/images/action.jpg">
+         <GoToAction bgImage="/assets/action.jpg">
             <div className="p-4 text-center">
                <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
                   TIRED OF NOT FEELING YOUR BEST?
@@ -134,6 +139,31 @@ export default function BlogPost({ data }) {
 
 export const query = graphql`
    query PostQuery($slug: String!, $categories: [String]!) {
+      page: markdownRemark(frontmatter: { type: { eq: "page" }, slug: { eq: "blog" } }) {
+         frontmatter {
+            meta_title
+            page_title
+            page_subtitle
+            meta_keywords
+            meta_description
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 1920)
+               }
+            }
+         }
+      }
+      about: markdownRemark(frontmatter: { type: { eq: "general" }, slug: { eq: "about" } }) {
+         frontmatter {
+            name
+            summary
+            profile {
+               childImageSharp {
+                  gatsbyImageData(width: 500)
+               }
+            }
+         }
+      }
       post: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
          html
          frontmatter {
@@ -142,7 +172,11 @@ export const query = graphql`
             created_at(formatString: "MM YYYY")
             tags
             summary
-            image
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 960)
+               }
+            }
          }
       }
       categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: "category" } } }) {
@@ -165,7 +199,11 @@ export const query = graphql`
                frontmatter {
                   title
                   slug
-                  image
+                  image {
+                     childImageSharp {
+                        gatsbyImageData(width: 500)
+                     }
+                  }
                }
             }
          }

@@ -10,53 +10,34 @@ import {
    TextColor,
    TextSize,
 } from "../components";
-import { Service } from "../blocks/home/services/ServicesBlock";
-import { index_data } from "../content";
-import { Testimonial } from "../blocks/home/testimonials/TestimonialsBlock";
-import type { Certification } from "../blocks/home/certifications/CertificationsBlock";
-import { BlogCategory } from "../blocks/home/blog/BlogBlock";
 import { Layout } from "../components/Layout/Layout";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 
-export interface IndexData {
-   heroImage: string;
-   heroImageMobile: string;
-   headline: string;
-   certifications: Certification[];
-   introImages: [string, string, string];
-   jobTitle: string;
-   otherTitles: string[];
-   introSummary: string;
-   services: Service[];
-   testimonials: Testimonial[];
-   blogCategories: BlogCategory[];
-}
-
-interface IndexPageProps {
-   data: IndexData;
-}
-
-const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
-   const data = index_data;
+const IndexPage = ({ data }) => {
+   const { page, certifications, about, services, testimonials } = data;
 
    return (
-      <Layout title="Home">
-         <HeroBlock heroImage={data.heroImage} heroImageMobile={data.heroImageMobile} headline={data.headline} />
-         <CertificationsBlock heading="Certifications" data={data.certifications} />
+      <Layout
+         title={page.frontmatter.meta_title}
+         description={page.frontmatter.meta_description}
+         keywords={page.frontmatter.keywords}
+      >
+         <HeroBlock heroImage={page.frontmatter.image} headline={page.frontmatter.page_title} />
+         <CertificationsBlock heading="Certifications" data={certifications} />
          <IntroBlock
-            images={data.introImages}
-            jobTitle={data.jobTitle}
-            otherTitles={data.otherTitles}
-            summary={<RenderHtml content={data.introSummary} />}
+            images={["/assets/landing/heba-1.jpg", "/assets/landing/heba-2.jpg", "/assets/landing/heba-3.jpg"]}
+            jobTitle={about.frontmatter.title}
+            otherTitles={about.frontmatter.skills}
+            summary={<RenderHtml content={about.html} />}
          />
-         <ServicesBlock headline="How I Work With Clients" services={data.services} />
+         <ServicesBlock headline="How I Work With Clients" services={services} />
          <TestimonialsBlock
-            bgImage="images/food/food-1.jpg"
-            testimonials={data.testimonials}
+            bgImage="/assets/food/food-1.jpg"
+            testimonials={testimonials}
             title={"Client Success Stories"}
          />
          {/* <BlogBlock categories={data.blogCategories} /> */}
-         <GoToAction bgImage="images/action.jpg">
+         <GoToAction bgImage="/assets/action.jpg">
             <div className="p-4 text-center">
                <HeadingText color={TextColor.LIGHT_1} size={TextSize.XL_2}>
                   TIRED OF NOT FEELING YOUR BEST?
@@ -67,11 +48,9 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
                <div className="mt-8">
                   {/* @ts-ignore */}
                   <Link to="/contact">
-                     <Link to="/contact">
-                        <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
-                           Let&apos;s Chat
-                        </Button>
-                     </Link>
+                     <Button color={ButtonColor.PRIMARY} size={ButtonSize.LARGE}>
+                        Let&apos;s Chat
+                     </Button>
                   </Link>
                </div>
             </div>
@@ -81,3 +60,74 @@ const IndexPage: React.FunctionComponent<IndexPageProps> = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+   query IndexQuery {
+      page: markdownRemark(frontmatter: { type: { eq: "page" }, slug: { eq: "home" } }) {
+         frontmatter {
+            meta_title
+            page_title
+            page_subtitle
+            meta_keywords
+            meta_description
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 1920)
+               }
+            }
+         }
+      }
+      certifications: allMarkdownRemark(
+         filter: { frontmatter: { type: { eq: "certification" } } }
+         sort: { fields: frontmatter___date, order: DESC }
+      ) {
+         edges {
+            node {
+               frontmatter {
+                  badge {
+                     childImageSharp {
+                        gatsbyImageData(width: 500)
+                     }
+                  }
+                  title
+               }
+            }
+         }
+      }
+      about: markdownRemark(frontmatter: { type: { eq: "general" }, slug: { eq: "about" } }) {
+         frontmatter {
+            name
+            title
+            skills
+         }
+         html
+      }
+      services: allMarkdownRemark(filter: { frontmatter: { type: { eq: "service" } } }) {
+         edges {
+            node {
+               frontmatter {
+                  image {
+                     childImageSharp {
+                        gatsbyImageData(width: 500)
+                     }
+                  }
+                  title
+                  subtitle
+                  summary
+               }
+            }
+         }
+      }
+      testimonials: allMarkdownRemark(filter: { frontmatter: { type: { eq: "testimonial" } } }) {
+         edges {
+            node {
+               frontmatter {
+                  date(formatString: "LL")
+                  from
+                  body
+               }
+            }
+         }
+      }
+   }
+`;

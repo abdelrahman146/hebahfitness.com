@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const _ = require("lodash");
+
 module.exports = {
    siteMetadata: {
       title: `hebahfitness.com`,
@@ -9,22 +12,38 @@ module.exports = {
    },
    plugins: [
       "gatsby-plugin-netlify-cms",
-      "gatsby-plugin-image",
-      // {
-      //   resolve: 'gatsby-plugin-google-analytics',
-      //   options: {
-      //     trackingId: '',
-      //   },
-      // },
+      "gatsby-transformer-yaml",
       "gatsby-plugin-react-helmet",
       "gatsby-plugin-sitemap",
       "gatsby-plugin-postcss",
-      // {
-      //   resolve: 'gatsby-plugin-manifest',
-      //   options: {
-      //     icon: 'src/static/images/icon.png',
-      //   },
-      // },
+      "gatsby-plugin-image",
+
+      {
+         resolve: "gatsby-plugin-sharp",
+         options: {
+            defaults: {
+               formats: ["auto", "webp"],
+               placeholder: "dominantColor",
+               quality: 65,
+               breakpoints: [750, 1080, 1366, 1920],
+               backgroundColor: "transparent",
+               tracedSVGOptions: {},
+               blurredOptions: {},
+               jpgOptions: {},
+               pngOptions: {},
+               webpOptions: {},
+               avifOptions: {},
+            },
+         },
+      },
+      "gatsby-transformer-sharp",
+      {
+         resolve: "gatsby-background-image-es5",
+         options: {
+            // add your own characters to escape, replacing the default ':/'
+            specialChars: "/:",
+         },
+      },
       {
          resolve: `gatsby-plugin-emotion`,
          options: {
@@ -36,35 +55,36 @@ module.exports = {
             cssPropOptimization: true,
          },
       },
-      "gatsby-plugin-sharp",
-      "gatsby-transformer-sharp",
-      `gatsby-transformer-yaml`,
       {
          resolve: "gatsby-source-filesystem",
          options: {
-            name: "images",
-            path: "./static/images/",
+            name: "assets",
+            path: `${__dirname}/static/assets`,
          },
-         __key: "images",
       },
       {
          resolve: "gatsby-source-filesystem",
          options: {
-            name: "posts",
-            path: "./content/posts",
+            name: "content",
+            path: `${__dirname}/content`,
          },
-         __key: "posts",
       },
       {
-         resolve: "gatsby-source-filesystem",
+         resolve: "gatsby-transformer-remark",
          options: {
-            name: "categories",
-            path: "./content/categories",
+            plugins: [
+               "gatsby-remark-relative-images-v2",
+               {
+                  resolve: "gatsby-remark-images",
+                  options: {
+                     maxWidth: 800,
+                     // withWebp: true,
+                     wrapperStyle: (fluidResult) => `flex:${_.round(fluidResult.aspectRatio, 2)};`,
+                  },
+               },
+               "gatsby-remark-copy-linked-files",
+            ],
          },
-         __key: "categories",
-      },
-      {
-         resolve: `gatsby-transformer-remark`,
       },
    ],
 };

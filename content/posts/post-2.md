@@ -7,7 +7,7 @@ tags: [Nutrition, Fitness]
 summary: >-
     Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea kasd rebum aliquyam stet eos.
 created_at: 2020-08-01T05:37:06.481Z
-image: /images/blog/workout.jpg
+image: /assets/blog/workout.jpg
 ---
 
 # Stet ea sit.

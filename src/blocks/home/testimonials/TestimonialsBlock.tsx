@@ -2,27 +2,37 @@ import * as React from "react";
 import { BodyText, DisplayText, SideImageSection, Slider, TextSize } from "../../../components";
 
 export interface Testimonial {
-   body: string;
-   from: string;
+   frontmatter: {
+      body: string;
+      from: string;
+   };
 }
 
 export interface TestimonialsBlockProps {
    title: string;
    bgImage: string;
-   testimonials: Testimonial[];
+   testimonials: {
+      edges: {
+         node: Testimonial;
+      }[];
+   };
 }
 
 export const TestimonialsBlock: React.FunctionComponent<TestimonialsBlockProps> = ({
-   testimonials = [],
+   testimonials,
    bgImage,
    title = "",
 }) => {
-   const createTestimonials = (testimonials: Testimonial[]) => {
-      return testimonials.map((item, index) => (
+   const createTestimonials = (testimonials: {
+      edges: {
+         node: Testimonial;
+      }[];
+   }) => {
+      return testimonials.edges.map(({ node }, index) => (
          <div key={index} className="">
-            <BodyText>{item.body}</BodyText>
+            <BodyText>{node.frontmatter.body}</BodyText>
             <div className="mt-8">
-               <DisplayText size={TextSize.MED}>{item.from}</DisplayText>
+               <DisplayText size={TextSize.MED}>{node.frontmatter.from}</DisplayText>
             </div>
          </div>
       ));

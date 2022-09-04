@@ -11,7 +11,7 @@ export const Box: React.FunctionComponent<BoxProps> = ({ children, action, image
    const createTape = (images) => {
       return images.map((image, index) => (
          <li key={index} className="my-2 first:block hidden md:block">
-            <Img style={ImageStyle.PLAIN} size={ImageSize.MEDIUM} src={image} />
+            <Img style={ImageStyle.PLAIN} size={ImageSize.MEDIUM} src={image} dynamic={false} />
          </li>
       ));
    };

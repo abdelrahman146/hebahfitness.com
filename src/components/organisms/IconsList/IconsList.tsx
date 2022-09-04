@@ -16,7 +16,7 @@ export const IconsList: React.FunctionComponent<IconsListProps> = ({ items }) =>
       return items.map((item, index) => (
          <li key={index} className="md:flex-1 w-full md:w-fit mb-16 last:mb-0 md:mb-0">
             <div className="flex justify-center">
-               <Img size={ImageSize.SMALL} style={ImageStyle.PLAIN} src={item.src || ""} alt={item.alt || ""} />
+               <Img size={ImageSize.SMALL} style={ImageStyle.PLAIN} src={item.src} alt={item.alt || ""} dynamic />
             </div>
             {item.title && (
                <div className="mt-4 text-center">

@@ -31,23 +31,20 @@ const menu: MenuItem[] = [
    },
 ];
 
-export const Layout: React.FunctionComponent<{ title: string }> = ({ title, children }) => {
+export const Layout: React.FunctionComponent<{ title: string; description?: string; keywords?: string[] }> = ({
+   title,
+   description,
+   keywords,
+   children,
+}) => {
    return (
       <div>
          <Helmet>
             <meta charSet="utf-8" />
-            <title>{title} - Hebah Fitness</title>
-            <meta
-               name="description"
-               content={
-                  "Reach your health & physique goals through well programmed training & nutritional plans specifically tailored to your goals."
-               }
-            />
-            <meta
-               name="keywords"
-               content="fitness, personal trainer, health coach, coaching, dubai, UAE, diet plan, workout, healthy, best coach in dubai, best personal trainer, female personal trainer"
-            />
-            <link rel="canonical" href="http://mysite.com/example" />
+            <title>{title || ""} - Hebah Fitness</title>
+            <meta name="description" content={description || ""} />
+            <meta name="keywords" content={keywords?.join(", ") || ""} />
+            {/* <link rel="canonical" href="http://mysite.com/example" /> */}
          </Helmet>
          <Header menu={menu} />
          {children}

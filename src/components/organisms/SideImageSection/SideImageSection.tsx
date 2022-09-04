@@ -10,6 +10,7 @@ export interface SideImageSectionProps {
    bgColor?: BgColor;
    fade?: boolean;
    imageSide: "START" | "END";
+   dynamic?: boolean;
    children?: React.ReactElement;
 }
 
@@ -20,6 +21,7 @@ export const SideImageSection: React.FunctionComponent<SideImageSectionProps> = 
    bgColor,
    fade,
    imageSide,
+   dynamic,
 }) => {
    const backgroundColor = bgColor ? bgColor : "bg-[#FFF]";
 
@@ -36,6 +38,7 @@ export const SideImageSection: React.FunctionComponent<SideImageSectionProps> = 
                            imageUrl={imageUrl}
                            fade={fade}
                            bgColor={backgroundColor}
+                           dynamic={dynamic}
                         />
                      </div>
                   )}
@@ -50,7 +53,13 @@ export const SideImageSection: React.FunctionComponent<SideImageSectionProps> = 
                      </div>
                   </div>
                   {imageSide === "END" && (
-                     <BackgroundImage imageSide={imageSide} imageUrl={imageUrl} fade={fade} bgColor={backgroundColor} />
+                     <BackgroundImage
+                        imageSide={imageSide}
+                        imageUrl={imageUrl}
+                        fade={fade}
+                        bgColor={backgroundColor}
+                        dynamic={dynamic}
+                     />
                   )}
                </div>
             </div>
@@ -59,7 +68,13 @@ export const SideImageSection: React.FunctionComponent<SideImageSectionProps> = 
             <div className="flex flex-row justify-items-stretch w-full min-h-[30rem]">
                {imageSide === "START" && (
                   <div className="flex-1 hidden md:block">
-                     <BackgroundImage imageSide={imageSide} imageUrl={imageUrl} fade={fade} bgColor={backgroundColor} />
+                     <BackgroundImage
+                        imageSide={imageSide}
+                        imageUrl={imageUrl}
+                        fade={fade}
+                        bgColor={backgroundColor}
+                        dynamic={dynamic}
+                     />
                   </div>
                )}
                <div className={`md:flex-1 py-16 px-16 ${bgColor}`}>
@@ -74,7 +89,13 @@ export const SideImageSection: React.FunctionComponent<SideImageSectionProps> = 
                </div>
                {imageSide === "END" && (
                   <div className="flex-1 hidden md:block">
-                     <BackgroundImage imageSide={imageSide} imageUrl={imageUrl} fade={fade} bgColor={backgroundColor} />
+                     <BackgroundImage
+                        imageSide={imageSide}
+                        imageUrl={imageUrl}
+                        fade={fade}
+                        bgColor={backgroundColor}
+                        dynamic={dynamic}
+                     />
                   </div>
                )}
             </div>

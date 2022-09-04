@@ -1,11 +1,22 @@
+import { graphql } from "gatsby";
 import * as React from "react";
 import { BgColor, Box, Container, DisplayText, HeadingText, PageHeader, Section, TextSize } from "../components";
 import { Layout } from "../components/Layout/Layout";
 
-const IndexPage: React.FunctionComponent = () => {
+const IndexPage = ({ data }) => {
+   const { page, about } = data;
+
    return (
-      <Layout title="Contact">
-         <PageHeader headline={"Let's Talk About Your Health"} bgImage={"images/landing/heba-2.jpg"} subheadline={""} />
+      <Layout
+         title={page.frontmatter.meta_title}
+         description={page.frontmatter.meta_description}
+         keywords={page.frontmatter.meta_keywords}
+      >
+         <PageHeader
+            headline={page.frontmatter.page_title}
+            bgImage={page.frontmatter.image}
+            subheadline={page.frontmatter.page_subtitle}
+         />
          <Section bgcolor={BgColor.LIGHT_2}>
             <Container>
                <div className="flex flex-row flex-wrap max-w-7xl mx-auto items-center">
@@ -21,7 +32,11 @@ const IndexPage: React.FunctionComponent = () => {
                   </div>
                   <div className="flex-1 lg:-translate-x-10">
                      <Box
-                        images={["images/landing/heba-1.jpg", "images/landing/heba-2.jpg", "images/landing/heba-3.jpg"]}
+                        images={[
+                           "/assets/landing/heba-1.jpg",
+                           "/assets/landing/heba-2.jpg",
+                           "/assets/landing/heba-3.jpg",
+                        ]}
                      >
                         <div className="lg:hidden mb-8">
                            <HeadingText size={TextSize.XL_7}>
@@ -34,18 +49,18 @@ const IndexPage: React.FunctionComponent = () => {
                            <div className="col-span-8">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
-                                 href="mailto:hebahrahall@gmail.com"
+                                 href={`mailto:${about.frontmatter.email}`}
                               >
-                                 hebahrahall@gmail.com
+                                 {about.frontmatter.email}
                               </a>
                            </div>
                            <div className="col-span-4 font-bold">Mobile:</div>
                            <div className="col-span-8">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
-                                 href="https://api.whatsapp.com/send?phone=971585199526&text=Hey%20Heba!"
+                                 href={`https://api.whatsapp.com/send?phone=${about.frontmatter.mobile}&text=Hey%20Heba!`}
                               >
-                                 +971585199526
+                                 +{about.frontmatter.mobile}
                               </a>
                            </div>
                         </div>
@@ -59,3 +74,28 @@ const IndexPage: React.FunctionComponent = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+   query ContactQuery {
+      page: markdownRemark(frontmatter: { type: { eq: "page" }, slug: { eq: "contact" } }) {
+         frontmatter {
+            meta_title
+            page_title
+            page_subtitle
+            meta_keywords
+            meta_description
+            image {
+               childImageSharp {
+                  gatsbyImageData(width: 1920)
+               }
+            }
+         }
+      }
+      about: markdownRemark(frontmatter: { type: { eq: "general" }, slug: { eq: "about" } }) {
+         frontmatter {
+            email
+            mobile
+         }
+      }
+   }
+`;
