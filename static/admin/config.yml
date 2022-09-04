@@ -73,10 +73,10 @@ collections:
         preview: false
      fields:
         - { label: "Type", name: "type", widget: "hidden", default: "certification" }
+        - { label: "Title", name: "title", widget: "string", required: true }
         - { label: "Certified Date", name: "date", widget: "date", required: true }
         - { label: "Badge", name: "badge", widget: "image", required: true }
         - { label: "Source", name: "source", widget: "string", required: true }
-        - { label: "Title", name: "title", widget: "image", required: true }
    - label: "Pages"
      name: "page"
      folder: "content/pages"
