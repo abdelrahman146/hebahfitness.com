@@ -149,6 +149,7 @@ collections:
      files:
         - label: "About"
           name: "about"
+          file: content/general/about.md
           editor:
              preview: false
           fields:
