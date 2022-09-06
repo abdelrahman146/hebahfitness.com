@@ -69,6 +69,7 @@ module.exports = {
             path: `${__dirname}/content`,
          },
       },
+      "gatsby-plugin-netlify-cms-paths",
       {
          resolve: "gatsby-transformer-remark",
          options: {
