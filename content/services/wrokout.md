@@ -1,7 +1,7 @@
 ---
 type: service
 slug: workout
-image: assets/dsc_6317.jpg
+image: assets/workout.jpg
 title: Online Workout Plan
 subtitle: HEALTH, WELLNESS, & SELF-CARE COACHING
 summary: Want to build glutes & show off your curves? I will provide a workout
