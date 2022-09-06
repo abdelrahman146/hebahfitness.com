@@ -7,7 +7,7 @@ tags: [Nutrition, Fitness]
 summary: >-
     Duo est et sea ut consetetur ut consetetur. Est justo.At kasd sit est sanctus eos tempor consetetur et aliquyam, et sea nonumy invidunt clita diam clita ipsum sed, amet.
 created_at: 2020-08-01T05:37:06.481Z
-image: /assets/blog/nutrition.jpg
+image: assets/nutrition.jpg
 ---
 
 # Stet ea sit.

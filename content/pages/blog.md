@@ -15,5 +15,5 @@ meta_title: "Blog"
 nav_title: "Blog"
 page_title: "THE SELF-CAR BLOG"
 page_subtitle: "HEALTH, WELLNESS, & SELF-CARE FOR ENTREPRENEURS"
-image: /assets/header-1.jpg
+image: assets/header-1.jpg
 ---

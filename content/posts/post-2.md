@@ -2,7 +2,7 @@
 type: post
 categories: [recipes]
 created_at: 2020-08-01T05:37:06.481Z
-image: /assets/blog/workout.jpg
+image: assets/workout.jpg
 title: How to Choose the Best Protein Powder ?
 slug: How-to-Choose-the-Best-Protein-Powder
 summary: >-
@@ -14,9 +14,9 @@ tags:
   - Fitness
   - protein
   - supplement
-  - '"muscle gain"'
-  - '"gain muscle"'
-  - '"protein powder"'
+  - 'muscle gain'
+  - 'gain muscle'
+  - 'protein powder'
 ---
 # Stet ea sit.
 

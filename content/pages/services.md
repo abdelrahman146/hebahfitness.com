@@ -15,5 +15,5 @@ meta_title: "Change Your Life"
 nav_title: "CHANGE YOUR LIFE"
 page_title: "CHANGE YOUR LIFE"
 page_subtitle: "(... AND HEALTH HABITS)"
-image: /assets/header-1.jpg
+image: assets/header-1.jpg
 ---

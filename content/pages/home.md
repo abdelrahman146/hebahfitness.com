@@ -16,5 +16,5 @@ nav_title: "Home"
 page_title: >-
     I HELP YOU ENJOY YOUR FOOD WHILE REACHING YOUR GOAL PHYSIQUE! GET STARTED
 page_subtitle: ""
-image: /assets/heba-hero.jpg
+image: assets/heba-hero.jpg
 ---

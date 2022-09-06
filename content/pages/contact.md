@@ -15,5 +15,5 @@ meta_title: "Let's Chat"
 nav_title: "Contact"
 page_title: "LET'S TALK ABOUT YOUR HEALTH"
 page_subtitle: "HEALTH, WELLNESS, & SELF-CARE FOR ENTREPRENEURS"
-image: /assets/header-1.jpg
+image: assets/header-1.jpg
 ---

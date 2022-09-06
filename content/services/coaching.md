@@ -1,7 +1,7 @@
 ---
 type: service
 slug: coaching
-image: /assets/clients/nutrition.jpg
+image: assets/nutrition.jpg
 title: 1:1 Nutrtional Coaching
 subtitle: HEALTH, WELLNESS, & SELF-CARE COACHING
 summary: >-

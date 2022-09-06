@@ -11,8 +11,8 @@ collections:
      folder: "content/posts"
      create: true
      slug: "{{fields.slug}}"
-     media_folder: /static/assets/posts
-     public_folder: /assets/posts
+     media_folder: content/posts/assets
+     public_folder: assets
      editor:
         preview: false
      fields:
@@ -46,8 +46,8 @@ collections:
      folder: "content/categories"
      create: true
      slug: "{{fields.slug}}"
-     media_folder: /static/assets/categories
-     public_folder: /assets/categories
+     media_folder: content/categories/assets
+     public_folder: assets
      editor:
         preview: false
      fields:
@@ -67,8 +67,8 @@ collections:
      folder: "content/certifications"
      create: true
      slug: "{{fields.title}}"
-     media_folder: /static/assets/certifications
-     public_folder: /assets/certifications
+     media_folder: content/certifications/assets
+     public_folder: assets
      editor:
         preview: false
      fields:
@@ -82,8 +82,8 @@ collections:
      folder: "content/pages"
      create: true
      slug: "{{fields.nav_title}}"
-     media_folder: /static/assets/pages
-     public_folder: /assets/pages
+     media_folder: content/pages/assets
+     public_folder: assets/pages
      editor:
         preview: false
      fields:
@@ -107,8 +107,8 @@ collections:
      folder: "content/services"
      create: true
      slug: "{{fields.title}}"
-     media_folder: /static/assets/services
-     public_folder: /assets/services
+     media_folder: content/services/assets
+     public_folder: assets
      editor:
         preview: false
      fields:
@@ -129,8 +129,8 @@ collections:
      folder: "content/testimonials"
      create: true
      slug: "{{fields.from}}"
-     media_folder: /static/assets/testimonials
-     public_folder: /assets/testimonials
+     media_folder: content/testimonials/assets
+     public_folder: assets
      editor:
         preview: false
      fields:
@@ -140,10 +140,9 @@ collections:
         - { label: "Body", name: "body", widget: "text", required: true }
    - label: "General"
      name: "general"
-     folder: "content/general"
      create: false
-     media_folder: /static/assets/general
-     public_folder: /assets/general
+     media_folder: content/general/assets
+     public_folder: assets
      editor:
         preview: false
      files:

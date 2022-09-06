@@ -1,7 +1,7 @@
 ---
 type: service
 slug: workout
-image: /assets/clients/workout.jpg
+image: assets/workout.jpg
 title: Online Workout Plan
 subtitle: HEALTH, WELLNESS, & SELF-CARE COACHING
 summary: >-
