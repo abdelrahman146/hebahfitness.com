@@ -11,7 +11,7 @@ collections:
      folder: "content/posts"
      create: true
      slug: "{{fields.slug}}"
-     media_folder: content/posts/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
@@ -46,7 +46,7 @@ collections:
      folder: "content/categories"
      create: true
      slug: "{{fields.slug}}"
-     media_folder: content/categories/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
@@ -67,7 +67,7 @@ collections:
      folder: "content/certifications"
      create: true
      slug: "{{fields.title}}"
-     media_folder: content/certifications/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
@@ -82,7 +82,7 @@ collections:
      folder: "content/pages"
      create: true
      slug: "{{fields.nav_title}}"
-     media_folder: content/pages/assets
+     media_folder: assets
      public_folder: assets/pages
      editor:
         preview: false
@@ -107,7 +107,7 @@ collections:
      folder: "content/services"
      create: true
      slug: "{{fields.title}}"
-     media_folder: content/services/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
@@ -129,7 +129,7 @@ collections:
      folder: "content/testimonials"
      create: true
      slug: "{{fields.from}}"
-     media_folder: content/testimonials/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
@@ -141,7 +141,7 @@ collections:
    - label: "General"
      name: "general"
      create: false
-     media_folder: content/general/assets
+     media_folder: assets
      public_folder: assets
      editor:
         preview: false
