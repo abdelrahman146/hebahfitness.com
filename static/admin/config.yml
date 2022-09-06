@@ -83,7 +83,7 @@ collections:
      create: true
      slug: "{{fields.nav_title}}"
      media_folder: assets
-     public_folder: assets/pages
+     public_folder: assets
      editor:
         preview: false
      fields:

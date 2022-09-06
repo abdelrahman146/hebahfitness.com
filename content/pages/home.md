@@ -15,5 +15,5 @@ meta_title: Home
 nav_title: Home
 page_title: I Will be your guide to reach your goal physique!
 page_subtitle: ""
-image: assets/pages/dsc_6300.jpg
+image: assets/dsc_6300.jpg
 ---
