@@ -16,8 +16,8 @@ import { Layout } from "../components/Layout/Layout";
 const introBlock = {
    headline: "Feeling hopeless because you've tried everything?",
    subheadline: "let's make sure it never happens to you!",
-   p1: "Commodo enim fugiat enim voluptate ex consequat sint nulla nulla nulla. Exercitation cupidatat ipsum mollit pariatur duis. Ullamco ex aute in fugiat ad consequat cupidatat veniam aliquip. Amet excepteur fugiat mollit nulla incididunt tempor veniam. Proident dolore incididunt ad est quis fugiat commodo sit sit nostrud. Id reprehenderit officia officia aute duis eu culpa culpa magna ex incididunt ex irure.",
-   p2: "Proident sint voluptate voluptate commodo excepteur laborum. Esse consectetur nulla reprehenderit officia cillum enim dolore voluptate excepteur. Lorem dolor irure incididunt est in enim in nulla laboris aliquip excepteur cillum nisi reprehenderit.",
+   p1: "You have probably tried different diets before to lose weight and mostly they all cause weight loss. However, you were not able to maintain the weight loss! The reason being is the approach you implemented was not optimal for you. Therefore, you could not maintain it as a lifestyle! People tend to know how to lose weight but cannot maintain it!",
+   p2: "Choosing me to be your coach not only will help you to lose weight but also guide you to how to maintain the weight loss based on foods you enjoy and incorporating more nutritional lower calories food choices! It’s time to make the change forever!",
 };
 
 export interface ServicesData {
