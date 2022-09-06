@@ -54,13 +54,13 @@ const IndexPage = ({ data }) => {
                                  {about.frontmatter.email}
                               </a>
                            </div>
-                           <div className="col-span-4 font-bold">Mobile:</div>
+                           <div className="col-span-4 font-bold">Instagram:</div>
                            <div className="col-span-8">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
-                                 href={`https://api.whatsapp.com/send?phone=${about.frontmatter.mobile}&text=Hey%20Heba!`}
+                                 href={`https://www.instagram.com/hebah.fitness/`}
                               >
-                                 +{about.frontmatter.mobile}
+                                 {about.frontmatter.mobile}
                               </a>
                            </div>
                         </div>
