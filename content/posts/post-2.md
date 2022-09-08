@@ -21,7 +21,15 @@ created_at: 2020-08-01T05:37:06.481Z
 categories:
   - nutrition
 ---
-# U﻿pdated Test
+# H﻿ow to Choose The Best Protein Powder?
+
+**Protein is essential for building and maintaining muscle mass. The best approach is to ingest protein from whole foods. However, many of us struggle to hit our daily protein goals and here where protein powder supplements come in handy.** 
+
+Protein powders are supplements made by extracting protein from a natural source like milk and a very famous one is whey protein. Whey is the liquid form leftover from curdling of milk.
+
+## 1﻿. Whey Protein Concentrate
+
+W﻿hey protein concentrate is the cheapest protein powder with good protein content. However, it has the highest amount of lactose (sugar found in milk) and those who are not able to digest daily product properly may find whey protein concentrate (WPC) not suitable as a protein supplement.
 
 ![](assets/what-our-viewers-say-about-optimum-nutrition-protein-1-700xh.jpeg)
 
