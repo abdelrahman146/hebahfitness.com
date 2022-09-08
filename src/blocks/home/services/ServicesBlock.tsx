@@ -58,7 +58,7 @@ export const ServicesBlock: React.FunctionComponent<ServicesBlockProps> = ({ hea
             <div className="text-center mb-8 md:mb-16 xl:mb-24">
                <HeadingText size={TextSize.XL_6}>{headline}</HeadingText>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 mx-10 md:gap-10">{createServices(services)}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10">{createServices(services)}</div>
             <div className="text-center mt-8 md:mt-16">
                <Button color={ButtonColor.SECONDARY} size={ButtonSize.XL}>
                   <Link to="/services">{"Learn More"}</Link>

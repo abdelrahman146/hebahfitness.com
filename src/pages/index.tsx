@@ -72,7 +72,7 @@ export const query = graphql`
             meta_description
             image {
                childImageSharp {
-                  gatsbyImageData(width: 1920)
+                  gatsbyImageData(width: 2048)
                }
             }
          }

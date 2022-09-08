@@ -45,8 +45,8 @@ const IndexPage = ({ data }) => {
                         </div>
 
                         <div className="grid grid-cols-12 gap-2 items-center">
-                           <div className="col-span-4 font-bold">Email:</div>
-                           <div className="col-span-8">
+                           <div className="col-span-5 font-bold">Email:</div>
+                           <div className="col-span-7">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
                                  href={`mailto:${about.frontmatter.email}`}
@@ -54,8 +54,8 @@ const IndexPage = ({ data }) => {
                                  {about.frontmatter.email}
                               </a>
                            </div>
-                           <div className="col-span-4 font-bold">Instagram:</div>
-                           <div className="col-span-8">
+                           <div className="col-span-5 font-bold">Instagram:</div>
+                           <div className="col-span-7">
                               <a
                                  className="text-secondary-800 hover:text-secondary-500 cursor-pointer"
                                  href={`https://www.instagram.com/hebah.fitness/`}
