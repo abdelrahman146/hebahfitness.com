@@ -2,9 +2,11 @@
 type: post
 title: How to Choose the Best Protein Powder ?
 slug: How-to-Choose-the-Best-Protein-Powder
-summary: Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
-  dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea
-  kasd rebum aliquyam stet eos.
+summary: >
+  Protein is essential for building and maintaining muscle mass. The best
+  approach is to ingest protein from whole foods. However, many of us struggle
+  to hit our daily protein goals and here where protein powder supplements come
+  in handy. 
 tags:
   - Nutrition
   - Fitness
