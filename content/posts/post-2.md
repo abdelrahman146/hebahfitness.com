@@ -33,4 +33,12 @@ W﻿hey protein concentrate is the cheapest protein powder with good protein con
 
 ![](assets/what-our-viewers-say-about-optimum-nutrition-protein-1-700xh.jpeg)
 
-Sadipscing lorem ea duo justo at amet diam voluptua lorem. Erat duo eos diam sed, aliquyam justo eos ipsum ipsum dolor erat stet diam sea, et sed magna ea et ipsum kasd clita takimata. Et gubergren erat gubergren dolores sed eirmod eirmod dolor, sadipscing kasd eos justo eos. Gubergren sed voluptua takimata consetetur. Stet est rebum amet stet ut sea consetetur. Et amet sit elitr erat eos justo dolor gubergren. Vero takimata vero et aliquyam ea. Kasd sadipscing invidunt et dolores est ea lorem rebum. Ut ipsum takimata et takimata et. Dolor eirmod clita dolores dolor et et. Takimata consetetur.
+## 2. Whey Protein Isolate
+
+
+
+## 3. Whey Protein Hydro
+
+
+
+W﻿hey Protein Hydrolysate (WPH) has been further refined using digestive enzymes to facilitate easy digestion for those who find difficulty digesting Whey Protein Isolate or concentrate. If you tried WPC or WPI and have digestive issues, then Whey protein hydrolysate (WPH) will probably cause no problem since it has already been digested by the digestive enzymes. However, it is more expensive and probably does not taste as good.
