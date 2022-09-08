@@ -29,16 +29,14 @@ Protein powders are supplements made by extracting protein from a natural source
 
 ## 1﻿. Whey Protein Concentrate
 
-W﻿hey protein concentrate is the cheapest protein powder with good protein content. However, it has the highest amount of lactose (sugar found in milk) and those who are not able to digest daily product properly may find whey protein concentrate (WPC) not suitable as a protein supplement.
+W﻿hey protein concentrate is the cheapest protein powder with good protein content. However, it has the highest amount of lactose (sugar found in milk) and those who are not able to digest daily product properly may find whey protein concentrate (WPC) not suitable as a protein supplement. These individuals can use Whey Protein Isolate instead (WPI).
 
 ![](assets/what-our-viewers-say-about-optimum-nutrition-protein-1-700xh.jpeg)
 
 ## 2. Whey Protein Isolate
 
+W﻿hey Protein Isolate (WPI) is produced by removing the sugars in the milk (lactose) which results in a higher proportion of protein due to the removal of lactose. This can probably reduce gastrointestinal distress that is cause by Whey Protein Concentrate, so WPI is more suitable for lactose intolerant individuals. Those who are only lactose sensitive can probably use WPC/WPI blends.
 
-
-## 3. Whey Protein Hydro
-
-
+## 3. Whey Protein Hydrolysate
 
 W﻿hey Protein Hydrolysate (WPH) has been further refined using digestive enzymes to facilitate easy digestion for those who find difficulty digesting Whey Protein Isolate or concentrate. If you tried WPC or WPI and have digestive issues, then Whey protein hydrolysate (WPH) will probably cause no problem since it has already been digested by the digestive enzymes. However, it is more expensive and probably does not taste as good.
