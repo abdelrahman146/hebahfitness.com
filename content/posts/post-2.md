@@ -1,12 +1,8 @@
 ---
 type: post
-categories: [recipes]
-created_at: 2020-08-01T05:37:06.481Z
-image: assets/workout.jpg
 title: How to Choose the Best Protein Powder ?
 slug: How-to-Choose-the-Best-Protein-Powder
-summary: >-
-  Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
+summary: Sanctus duo et lorem rebum diam lorem. Rebum nonumy accusam elitr sea
   dolor clita lorem accusam. Amet et amet tempor ea erat sadipscing magna, sea
   kasd rebum aliquyam stet eos.
 tags:
@@ -14,17 +10,15 @@ tags:
   - Fitness
   - protein
   - supplement
-  - 'muscle gain'
-  - 'gain muscle'
-  - 'protein powder'
+  - muscle gain
+  - gain muscle
+  - protein powder
+image: assets/workout.jpg
+created_at: 2020-08-01T05:37:06.481Z
+categories:
+  - recipes
 ---
-# Stet ea sit.
-
-### **How to choose the best protein powder?** 
-
-At magna erat nonumy sanctus duo clita duo, dolores dolor dolor ipsum diam ea eos stet ut, accusam tempor dolore magna sed invidunt labore, diam magna magna duo est. Diam sea dolor ut tempor sed gubergren dolores ipsum. Gubergren at accusam tempor duo. Sadipscing lorem sed diam gubergren clita et sanctus. Accusam magna rebum elitr ipsum clita et consetetur sit. Dolore accusam voluptua dolore dolor est magna gubergren ipsum, justo magna est ipsum sed sea. Sea et magna [eirmod](www.instagram.com) ea est. Amet ea lorem amet ut tempor diam vero. Amet ipsum et amet dolor justo. Dolor dolores sed sed eirmod.
-
-
+# U﻿pdated Test
 
 ![](/assets/posts/screen-shot-2022-07-15-at-11.55.05-am.png)
 
