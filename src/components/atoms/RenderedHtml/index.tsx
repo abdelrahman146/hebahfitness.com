@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const RenderedHTML = styled.div`
    font-size: 1.2em;
-   color: #3e5648;
+   color: #2C2C2C;
    font-family: Cormorant serif;
    h1 {
       display: block;
