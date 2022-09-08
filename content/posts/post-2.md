@@ -1,6 +1,6 @@
 ---
 type: post
-title: How to Choose the Best Protein Powder ?
+title: How to Choose the Best Protein Powder For You ?
 slug: How-to-Choose-the-Best-Protein-Powder
 summary: >
   Protein is essential for building and maintaining muscle mass. The best
