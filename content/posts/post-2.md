@@ -42,3 +42,7 @@ W﻿hey Protein Isolate (WPI) is produced by removing the sugars in the milk (la
 ## 3. Whey Protein Hydrolysate
 
 W﻿hey Protein Hydrolysate (WPH) has been further refined using digestive enzymes to facilitate easy digestion for those who find difficulty digesting Whey Protein Isolate or concentrate. If you tried WPC or WPI and have digestive issues, then Whey protein hydrolysate (WPH) will probably cause no problem since it has already been digested by the digestive enzymes. However, it is more expensive and probably does not taste as good.
+
+## 4. Soy Protein
+
+I﻿f you are vegan and looking for a complete source of protein powder, you can supplement with Soy Protein Powder. Soy protein powder supplements can help and are complete source of protein which is which means they contain all of the nine essential amino acids that the body cannot make on its own. This can be difficult sometimes for vegans to ingest all nine essential amino acid from vegan sources alone unless they mix different plant sources to hit their needs from nine essential amino acids. Supplementing can also really help with hitting your protein goal.
