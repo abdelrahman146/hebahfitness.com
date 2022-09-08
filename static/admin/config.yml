@@ -23,7 +23,7 @@ collections:
              name: "slug",
              widget: "string",
              required: true,
-             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+             pattern: ["^[A-z0-9]+(?:-[A-z0-9]+)*$", "Format is invalid"],
           }
         - { label: "Summary", name: "summary", widget: "text", required: true }
         - { label: "Tags", name: "tags", widget: "list", required: false }
@@ -57,7 +57,7 @@ collections:
              name: "slug",
              widget: "string",
              required: true,
-             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+             pattern: ["^[A-z0-9]+(?:-[A-z0-9]+)*$", "Format is invalid"],
           }
         - { label: "Name", name: "name", widget: "string", required: true }
         - { label: "Description", name: "description", widget: "text", required: true }
@@ -93,7 +93,7 @@ collections:
              name: "slug",
              widget: "string",
              required: true,
-             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+             pattern: ["^[A-z0-9]+(?:-[A-z0-9]+)*$", "Format is invalid"],
           }
         - { label: "Meta Keywords", name: "meta_keywords", widget: "list", required: true }
         - { label: "Meta Description", name: "meta_description", widget: "text", required: true }
@@ -118,7 +118,7 @@ collections:
              name: "slug",
              widget: "string",
              required: true,
-             pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Format is invalid"],
+             pattern: ["^[A-z0-9]+(?:-[A-z0-9]+)*$", "Format is invalid"],
           }
         - { label: "Image", name: "image", widget: "image", required: true }
         - { label: "Title", name: "title", widget: "string", required: true }
