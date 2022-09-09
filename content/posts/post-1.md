@@ -1,7 +1,7 @@
 ---
 type: post
-title: Lorem diam voluptua.
-slug: post-1
+title: "Creatine and How To Use It? "
+slug: Creatine
 summary: Duo est et sea ut consetetur ut consetetur. Est justo.At kasd sit est
   sanctus eos tempor consetetur et aliquyam, et sea nonumy invidunt clita diam
   clita ipsum sed, amet.
