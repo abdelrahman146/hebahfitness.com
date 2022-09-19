@@ -14,9 +14,9 @@ categories:
   - nutrition
   - recipes
 ---
-# U﻿pdated Post
+# Creatine and How To Use It? 
 
-What is creatine ?
+## What is creatine ?
 
 Creatine is a non-protein amino acid that is stored mostly within our muscle cells in the form mostly of phosphocreatine and aid in energy production. We consume creatine from foods especially meats and fish. However, we cannot concentrate our muscles with creatine using diet alone because uncooked beef or salmon can provide around 1-2g of creatine which is probably not easily attainable by many individuals to have this amount and might even need more (depending on individual’s muscle mass). If you are looking to build more muscles you will need to concentrate your muscles with creatine. Therefore, supplementing with creatine monohydrate can be very helpful plus it is considered a very cheap supplement. However, more creatine doesn’t necessarily mean more beneficial since the body excrete excess creatine in urine.
 
@@ -24,7 +24,7 @@ ATP (Adenosine Triphosphate) is the energy currency used by the body to fuel man
 
 If you are concerned about water retention cause by creatine, rest assured that the water retention happening in intracellular (inside muscle cells) and muscles are 75% water which means supplementing with creatine will help you look better!
 
-How to use creatine ?
+## How to use creatine ?
 
 There are two ways to take creatine, the first simple and easy one is to take a scoop everyday (3-5g), but if you want to speed up the process of concentrating your muscles with creatine then you can do a loading phase. I have to note that some people might have gastrointestinal issues with creatine supplementation, you can try reducing the dose until you find no issues (these individuals can skip loading phase).
 
